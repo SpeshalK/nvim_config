@@ -1,3 +1,17 @@
+require'lspconfig'.pyright.setup{
+    settings = {
+        python = {
+            analysis = {
+                autoSearchPaths = true,
+                diagnosticMode = "workspace",
+                diagnosticSeverityOverrides = {
+                    reportUnboundVariable="none"
+                },
+            },
+        }
+    }
+}
+
 local lsp = require('lsp-zero').preset({
     globals = { 'vim' }
 })
