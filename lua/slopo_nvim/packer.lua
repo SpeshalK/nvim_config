@@ -12,7 +12,6 @@ return require('packer').startup(function(use)
     use("hrsh7th/nvim-cmp")
 
     -- theme
-    use({ 'rose-pine/neovim', as = 'rose-pine' })
     use('folke/tokyonight.nvim')
     use('christianchiarulli/nvcode-color-schemes.vim')
     use("rebelot/kanagawa.nvim")
