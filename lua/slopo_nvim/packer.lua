@@ -9,7 +9,7 @@ return require('packer').startup(function(use)
 
     -- completion
     use({'neoclide/coc.nvim', branch = 'release'})
-    use("hrsh7th/nvim-cmp")
+    --use("hrsh7th/nvim-cmp")
 
     -- theme
     use('folke/tokyonight.nvim')
