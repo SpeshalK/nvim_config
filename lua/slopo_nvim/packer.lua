@@ -7,10 +7,6 @@ return require('packer').startup(function(use)
     -- Packer can manage itself
     use('wbthomason/packer.nvim')
 
-    -- completion
-    use({'neoclide/coc.nvim', branch = 'release'})
-    --use("hrsh7th/nvim-cmp")
-
     -- theme
     use('folke/tokyonight.nvim')
     use('christianchiarulli/nvcode-color-schemes.vim')
@@ -58,12 +54,11 @@ return require('packer').startup(function(use)
 
     -- Language specific
     use('JuliaEditorSupport/julia-vim')
-
     -- Other
     use("mbbill/undotree") -- search through undo branches
     use("ryanoasis/vim-devicons")
     use("echasnovski/mini.map")
-    use("ervandew/supertab") -- tab completions
+    --use("ervandew/supertab") -- tab completions
     use("nvim-treesitter/nvim-treesitter", {run = ":TSUpdate"})
     use("nvim-treesitter/playground")
     use("nvim-lua/popup.nvim")

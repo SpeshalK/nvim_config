@@ -1,8 +1,8 @@
 -- File Search
 vim.keymap.set("n","<leader>fs",vim.cmd.Ex)
 
-
 -- Text editing
+vim.keymap.set("v","<A-y>","\"+") -- Select clipboard for yank (press y again to yank selcted text)
 --vim.keymap.set("n",",p","\"0p") -- paste last yaked text
 --vim.keymap.set("n",",P","\"0P")
 --vim.keymap.set("n","p",'"_dP') -- dont save pasted over text
@@ -13,7 +13,6 @@ vim.keymap.set("v","<A-j>",":m '>+1<CR>gv=gv") -- up
 
 -- Spellcheck
 vim.keymap.set("n","<C-s>c","<cmd>setlocal spell spelllang=en_gb<CR>")
-
 
 -- Page jumping
 vim.keymap.set("n","<C-u>","<C-u>zz")
