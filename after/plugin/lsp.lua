@@ -65,3 +65,36 @@ end)
 vim.opt.signcolumn = 'yes'
 
 lsp_zero.setup()
+
+require('luasnip.loaders.from_vscode').lazy_load()
+
+-- 6. Autocompletion
+local cmp = require('cmp')
+local cmp_select = {behavior = cmp.SelectBehavior.Select}
+
+cmp.setup({
+  -- Load the snippets you have in Packer (friendly-snippets)
+  sources = {
+    {name = 'path'},
+    {name = 'nvim_lsp'},
+    {name = 'nvim_lua'},
+    {name = 'luasnip', keyword_length = 2},
+    {name = 'buffer', keyword_length = 3},
+  },
+  -- Add borders to the menu to look good in Ghostty
+  window = {
+    completion = cmp.config.window.bordered(),
+    documentation = cmp.config.window.bordered(),
+  },
+  formatting = lsp_zero.cmp_format(),
+  mapping = cmp.mapping.preset.insert({
+    -- Tab to cycle forward
+    ['<Tab>'] = cmp.mapping.select_next_item(cmp_select),
+    -- Shift-Tab to cycle backward
+    ['<S-Tab>'] = cmp.mapping.select_prev_item(cmp_select),
+    -- Enter to confirm
+    ['<CR>'] = cmp.mapping.confirm({ select = true }),
+    -- Ctrl+Space to force trigger completion menu
+    ['<C-Space>'] = cmp.mapping.complete(),
+  }),
+})

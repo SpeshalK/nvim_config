@@ -52,13 +52,16 @@ return require('packer').startup(function(use)
       end
     }
 
+    -- Indentation
+    use("nvimtools/none-ls.nvim")
+
     -- Language specific
     use('JuliaEditorSupport/julia-vim')
     -- Other
     use("mbbill/undotree") -- search through undo branches
-    use("ryanoasis/vim-devicons")
+    --use("ryanoasis/vim-devicons")
+    use("nvim-tree/nvim-web-devicons")
     use("echasnovski/mini.map")
-    --use("ervandew/supertab") -- tab completions
     use("nvim-treesitter/nvim-treesitter", {run = ":TSUpdate"})
     use("nvim-treesitter/playground")
     use("nvim-lua/popup.nvim")
