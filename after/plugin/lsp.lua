@@ -21,11 +21,17 @@ mason_lspconfig.setup({
         'pyright',
         'bashls',
         'lua_ls',
+        'julials',
     },
     -- Use the handlers to apply custom configuration after installation/setup
     handlers = {
         -- Use the default LSP Zero setup for all other servers
         lsp_zero.default_setup,
+
+        -- fix lua_ls (Removes the "undefined vim" warning)
+        lua_ls = function()
+            lspconfig.lua_ls.setup(lsp_zero.nvim_lua_ls())
+        end,
 
         -- Custom configuration for Pyright (Replaces lsp.configure('pyright', ...))
         pyright = function()
