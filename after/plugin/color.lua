@@ -25,8 +25,9 @@ vim.cmd([[highlight PreProc guifg=#80ffff guibg=NONE]])
 -- visual mode
 vim.cmd([[highlight Visual guifg=#e1b569 guibg=#144872]])
 
--- Comment 
+-- Comment & docstring 
 vim.cmd([[highlight Comment guifg=#C81EB6 ctermbg=NONE]])
+vim.cmd([[highlight @string.docstring.python guifg=#6080a0 gui=italic]])
 
 -- Error messages
 vim.cmd([[highlight Error guifg=#fc514e guibg=NONE]])
